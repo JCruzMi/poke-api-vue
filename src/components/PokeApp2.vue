@@ -1,5 +1,5 @@
 <template>
-    <div :v-if="pokes">
+    <div v-if="pokes">
         <poke-list2></poke-list2>
     </div>
 </template>
