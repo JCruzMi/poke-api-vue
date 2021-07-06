@@ -60,4 +60,9 @@ export default {
     border: transparent;
 }
 
+.badge{
+    width: 5rem;
+    padding: .3rem 1rem;
+}
+
 </style>

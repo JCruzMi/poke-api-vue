@@ -1,12 +1,14 @@
 <template>  
     <form @submit.prevent="filtrar">
         <div class="container">
-    
-            <div style="width:100%">
+            <div class="pokeball">
+                <img src="https://icon-library.com/images/pokemon-ball-icon/pokemon-ball-icon-28.jpg" alt="24" width="42">
+            </div>
+            <div class="input">
                 <input
                     type="text"
                     class="form-control my-3"
-                    placeholder="Buscar pokemon"
+                    placeholder="Buscar Pokémon"
                     v-model.trim="texto"
                 >
             </div>
@@ -41,9 +43,28 @@ export default {
 }
 </script>
 
-<style>
-.img{
-    width: 5%;
-    height: 5%;
+<style scoped>
+
+.container{
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 0;
+}
+
+.pokeball{
+    display: inline-block;
+}
+.input{
+    display: inline-block;
+    width: calc(100% - 50px);
+}  
+
+input{
+    background-color: rgb(223, 223, 223);
+    text-align: center;
+    border-radius: 20px;
+    border: 0px;
+    font-weight: bold;
 }
 </style>

@@ -1,27 +1,22 @@
 <template>
     <stats :poke="poke" v-if="poke.stats"/>
-
-    <div class="col-sm-6 col-md-4 col-xl-3"  v-if="mHeader">
-      <div class="card-container" type="button"  @click="onStatsClick(poke.id)">
-      <div class="card">
-          <div class="front">
-            <div class="cover" :style="poke.bg">
+    
+    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3"  v-if="mHeader">
+        <div class="card-container" type="button"  @click="onStatsClick(poke.id)">
+            <div class="card" :style="poke.bg">
+                <div class="front">
+                    <div class="poke">
+                        <img :src="poke.img">
+                    </div>
+                    <div class="card-body">
+                        <span class="pokename d-flex justify-content-between">
+                            <span>#{{poke.id}}</span>
+                            <span>{{poke.name}}</span>
+                        </span>
+                    </div>
+                </div>      
             </div>
-            <div class="poke">
-				  <img class ="img-circle" :src="poke.img" alt="" width="92" height="92">
-			</div>
-          <div class="card-body" >
-              <li class="list-group-item align-items-center">
-                <span class="pokename">
-                    {{poke.name}}
-                </span>
-                
-            </li>
-                
-          </div>
-          </div>      
-          </div>
-      </div>
+        </div>
     </div>
   
 </template>
@@ -54,52 +49,60 @@ export default {
 </script>
 
 <style scoped>
-.card .cover{
-    width: 100%;
-    margin-top: -1px ;
-    height: 120px;
-    border-radius: 125px 125px 0px 0px;
-    
-    
-}
-.card .poke{
-    border-radius: 50%;
-    display: block;
-    height: 125px;
-    margin: -55px auto 0;
-    overflow: hidden;
-    width: 120px;
-}
-.card .poke img{
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 10px solid #FFFFFF;
-    width: 100%;
-}
-.card .card-body{
-    margin-top: -10%;
-    background: transparent;
-    border-color:transparent;
-}
 
-.card .card-body .pokename{
-    color: #000;
-    font-size: 20px;
-    background: transparent;
-}
-
-.card .card-body .list-group-item{
-    background: transparent;
-    border-color:transparent;
-}
-
-.card .card-footer{
-    margin-bottom: 5%;
-    background: transparent;
+.card-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card{
-    
-    margin-bottom: 10%;
-    border-radius: 100%;
+    margin-top: 2rem ;
+    border-radius: 20px;
+    height: 120px;
+    width: 157px;
+    border: 0px;
+    position: relative;
+    background: rgb(231,63,202);
+    background: linear-gradient(225deg, rgba(231,63,202,1) 0%, rgba(184,30,180,1) 73%);
 }
+
+.pokename{
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    background-color:black;
+    color: white;
+    display: block;
+    margin-top: 0.5rem;
+    opacity: 0.75;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+.pokename span:last-child{
+    display: inline-block;
+}
+
+.pokename span:first-child{
+    margin-right: 0.5rem;
+    color:rgb(209, 57, 201);
+    display: inline-block;
+}
+
+
+.poke{
+    position: absolute;
+    width: 100%;
+    display: block;
+    margin-top: -20px;
+    position: relative;
+}
+
+img{
+    height: 60px;
+    width: auto;
+}
+
+
 </style>

@@ -38,18 +38,22 @@ export default {
           ghost: '#8d1bdb',
           poison: '#690081'
         }
+        provide("Color",Color)
         
         const mHeader = ref(true)
         provide('mHeader',mHeader)
 
         watchEffect(() => {
-            for (let i = 1; i<= 500; i++){
+            for (let i = 1; i<= 898; i++){
                 axios.get('https://pokeapi.co/api/v2/pokemon/'+i)
                 .then( response => {
 
-                    let pk = {'name':response.data.name, 
+                    let aux = response.data.types
+
+                    let pk = {
+                        'name':response.data.name, 
                         'id':response.data.id, 
-                        'img':response.data.sprites.other.dream_world.front_default,
+                        'img':response.data.sprites.other["official-artwork"].front_default,
                         'atk':response.data.stats[1].base_stat, 
                         'hp':response.data.stats[0].base_stat, 
                         'espatk':response.data.stats[3].base_stat,
@@ -58,17 +62,25 @@ export default {
                         'speed':response.data.stats[5].base_stat,
                         'height':response.data.height,
                         'weight':response.data.weight,
+                        'type2':"",
                         'types': response.data.types[0].type.name,
                         'exp':response.data.base_experience,
                         'bg':{background : Color[response.data.types[0].type.name]},
+                        'bg2':"",
                         'stats': false
-                        }
-
+                    }
+                    
+                    if (aux.length>=2){
+                        pk["type2"] = (aux[1].type["name"])
+                        pk["bg2"] = ({background :Color[aux[1].type["name"]]})
+                    }
                 
                     pokes.value.push(pk)
+                    
                 }).catch( e => console.log(e))
             }
         })
+
         provide('pokes',pokes)
 
         return {pokes}

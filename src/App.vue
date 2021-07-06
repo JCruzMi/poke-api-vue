@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>PokeApi</h1>
+    <img class="im" src="https://ianars.github.io/Pok-dex/images/pokedeex.png">
     <poke-app2></poke-app2>
   </div>
 </template>
@@ -21,11 +21,17 @@ export default {
 
 body{ 
   height: 100%; 
-  background: #3a3737; 
   margin-top: 5%;
  }
+
+.container .im{
+  width: 50%;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+ 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
