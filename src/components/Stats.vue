@@ -106,21 +106,22 @@ props: ["poke"],
     background-color: rgba(48, 48, 48, 0.493);
     border-radius: 10px;
     text-transform: capitalize;
-    
+    font-weight: bold;
 }
 
 .card-body span:first-child{
     margin-left: -1rem;
     margin-right: 1rem;
+    color: rgb(219, 219, 219);
+    text-shadow: 1px 1px 1px #242424;
 }
 
 .card-body span:last-child{
     margin-right: -1rem;
     margin-left: 1rem;
+    color: rgb(219, 219, 219);
+    text-shadow: 1px 1px 1px #242424;
 }
-
-
-
 
 .list-group{
     background: transparent;

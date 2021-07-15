@@ -1,6 +1,13 @@
 <template>
     <div v-if="pokes">
-        <poke-list2></poke-list2>
+        <Suspense>
+        <template #default>
+            <poke-list2></poke-list2>
+        </template>
+        <template #fallback>
+            Cargando...
+        </template>
+        </Suspense>
     </div>
 </template>
 

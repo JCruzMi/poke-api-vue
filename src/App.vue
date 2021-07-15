@@ -19,9 +19,12 @@ export default {
 
 <style>
 
+::-webkit-scrollbar {display: none;}
+
 body{ 
   height: 100%; 
-  margin-top: 5%;
+  margin-top: 3%;
+  background-color: #065A9C;
  }
 
 .container .im{
@@ -35,7 +38,6 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: rgb(116, 92, 92);
   margin-top: 60px;
 }
 </style>

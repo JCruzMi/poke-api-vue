@@ -2,8 +2,8 @@
     <stats :poke="poke" v-if="poke.stats"/>
     
     <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3"  v-if="mHeader">
-        <div class="card-container" type="button"  @click="onStatsClick(poke.id)">
-            <div class="card" :style="poke.bg">
+        <div class="card-container">
+            <div class="card" :style="poke.bg" type="button"  @click="onStatsClick(poke.id)">
                 <div class="front">
                     <div class="poke">
                         <img :src="poke.img">
@@ -63,8 +63,16 @@ export default {
     width: 157px;
     border: 0px;
     position: relative;
-    background: rgb(231,63,202);
-    background: linear-gradient(225deg, rgba(231,63,202,1) 0%, rgba(184,30,180,1) 73%);
+    box-shadow: 1px 1px #064f86;
+}
+
+.card:hover{
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
 }
 
 .pokename{

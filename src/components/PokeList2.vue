@@ -2,11 +2,11 @@
 
     <sear v-if="mHeader"></sear>
 
-  <div class="row" :v-if="pokes">
+    <div class="row" :v-if="pokes">
       <item v-for="poke in pokes"
         :key="poke.id"
         :poke="poke"></item>
-  </div>
+    </div>
 </template>
 
 <script>
